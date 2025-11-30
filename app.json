@@ -27,6 +27,7 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
       "output": "single",
+      "baseUrl": "/4HC3",
       "build": {
         "babel": {
           "include": [

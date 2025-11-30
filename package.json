@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "npx expo export --platform web",
-    "predeploy": "npm run build:web"
+    "fix-paths": "node scripts/fix-paths.js",
+    "predeploy": "npm run build:web && npm run fix-paths"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^7.8.7",
