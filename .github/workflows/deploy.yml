@@ -35,7 +35,7 @@ jobs:
         run: npm run build:web
 
       - name: Copy .nojekyll file
-        run: cp .nojekyll web-build/.nojekyll || echo "No .nojekyll file to copy"
+        run: cp .nojekyll dist/.nojekyll || echo "No .nojekyll file to copy"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './web-build'
+          path: './dist'
 
   deploy:
     environment:
