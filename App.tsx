@@ -1,20 +1,19 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StudyPlacesProvider } from './src/context/StudyPlacesContext';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { ResponsiveWrapper } from './src/components/ResponsiveWrapper';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ResponsiveWrapper>
+      <StudyPlacesProvider>
+        <NavigationContainer>
+          <StatusBar style="dark" />
+          <RootNavigator />
+        </NavigationContainer>
+      </StudyPlacesProvider>
+    </ResponsiveWrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
